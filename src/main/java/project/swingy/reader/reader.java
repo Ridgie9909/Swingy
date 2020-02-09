@@ -15,6 +15,7 @@ public class reader {
         Scanner in = new Scanner(System.in);
         System.out.println("Please select either GUI or Console.");
         String UIT = in.nextLine();
+        in.close();
 
         return (UIT.toLowerCase());
     }

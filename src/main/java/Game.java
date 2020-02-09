@@ -4,8 +4,11 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.*;
- import java.io.*;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+//  import java.io.*;
 // import java.io.FileInputStream;
 // import java.io.IOException;
 
@@ -49,40 +52,39 @@ public class Game {
 	ChoiceHandler choiceHandler = new ChoiceHandler();
 
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
-        System.out.println("     North"+ "\n       |" + "\n" + "West  -" + " -   East"+ "\n       |" + "\n" + "     South");
-//        System.out.println(" __          _                   \n" +
-//                           "/ _\\_      _(_)_ __   __ _ _   _ \n" +
-//                           "\\ \\\\ \\ /\\ / / | '_ \\ / _` | | | |\n" +
-//                           "_\\ \\\\ V  V /| | | | | (_| | |_| |\n" +
-//                           "\\__/ \\_/\\_/ |_|_| |_|\\__, |\\__, |\n" +
-//                           "                     |___/ |___/ ");
-//        try{
-//			write.create();
-//			System.out.println("Welcome to Swingy! hope you enjoy your stay.");
-//			reader treader = new reader();
-//			console con = new console();
-//			String var2 = treader.hscanner();
-//
-//			if (var2.equals("gui")){
-//				new Game();
-//				System.out.println("Gui has been selected and please be calm");
-//			}
-//			else if (var2.equals("console")){
-//				/*call console file*/
-//
-//				con.conreader();
-//				System.out.println("Console has been selected and please be calm");
-//			}
-//			else{
-//				System.out.println("Please make sure your input is correct for Ridge's project to run smoothly.");
-//			}
-//		}
-//        finally{
-//
-//				System.out.println("hello");
-//        }
+      // System.out.println("     North"+ "\n       |" + "\n" + "West  -" + " -   East"+ "\n       |" + "\n" + "     South");
+       System.out.println(" __          _                   \n" +
+                          "/ _\\_      _(_)_ __   __ _ _   _ \n" +
+                          "\\ \\\\ \\ /\\ / / | '_ \\ / _` | | | |\n" +
+                          "_\\ \\\\ V  V /| | | | | (_| | |_| |\n" +
+                          "\\__/ \\_/\\_/ |_|_| |_|\\__, |\\__, |\n" +
+                          "                     |___/ |___/ ");
+       try{
+			write.create();
+			System.out.println("Welcome to Swingy! hope you enjoy your stay.");
+			final reader treader = new reader();
+			final console con = new console();
+			final String var2 = treader.hscanner();
+
+			if (var2.equals("gui")){
+				new Game();
+				System.out.println("Gui has been selected and please be calm");
+			}
+			else if (var2.equals("console")){
+				/*call console file*/
+				System.out.println("Console has been selected and please be wait...");
+				con.conreader();
+			}
+			else{
+				System.out.println("Please make sure your input is correct for Ridge's project to run smoothly.");
+			}
+		}
+       finally{
+
+				System.out.println("hello1");
+       }
 
     }
 //	public static void main(String[] args) {
@@ -293,7 +295,7 @@ public class Game {
 //	 	}
         public int randomnumber()
         {
-            Random rand = new Random();
+            final Random rand = new Random();
             int n = rand.nextInt(50);
             n += 1;
             return (n);
@@ -409,7 +411,7 @@ public class Game {
 	}
 	/*currrent working space*/
 	public int magicriver(){
-		Random rand = new Random();
+		final Random rand = new Random();
 		river = rand.nextInt(15);
 		river += 1;
 		return (river);
@@ -571,16 +573,16 @@ public class Game {
 	
 	public class TitleScreenHandler implements ActionListener{
 		
-		public void actionPerformed(ActionEvent event){
+		public void actionPerformed(final ActionEvent event){
 			
 			createGameScreen();
 		}
 	}
 	public class ChoiceHandler implements ActionListener{
 		
-		public void actionPerformed(ActionEvent event){
+		public void actionPerformed(final ActionEvent event){
 			
-			String yourChoice = event.getActionCommand();
+			final String yourChoice = event.getActionCommand();
 			
 			switch(position){
 			case "townGate":

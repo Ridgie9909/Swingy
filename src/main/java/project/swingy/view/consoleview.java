@@ -25,10 +25,11 @@ public class consoleview {
         System.out.println("Navigate the map via the directional commands:");
         Scanner scan = new Scanner(System.in);
         String dirvar = scan.nextLine();
-        if (dirvar.equals()){
-
-        }
+        System.out.print (dirvar);
         System.out.println("     North"+ "\n       |" + "\n" + "West  -" + " -   East"+ "\n       |" + "\n" + "     South");
+        if (dirvar.equals("") ){
+            
+        }
 
         System.out.println("please choose a direction to move in");
     }

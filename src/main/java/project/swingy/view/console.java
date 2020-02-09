@@ -1,10 +1,13 @@
 package project.swingy.view;
 
+import project.swingy.view.consoleview;
 import java.io.IOException;
 import java.util.Scanner;
 
 import java.lang.*;
 //toLowerCase;
+
+
 
 public class console {
 
@@ -16,21 +19,27 @@ public class console {
 
     public static void conreader() {
         System.out.println("Swingy console is now running");
-        System.out.println("please feed some data");
+        System.out.println("Type Begin to Start your adventure.");
 
-        String pdata = playscan.nextLine();
-        System.out.println(pdata);
+        final String pdata = playscan.nextLine();
+        // System.out.println(pdata);
 //        readercon();
         try {
             if (pdata.equals("begin")) {
-                System.out.println("Your console view is loading please wait...\n" + pdata);
+                System.out.println("Your console view is loading please wait...\n" + pdata) ;
+                consoleview conv = consoleview();
+                conv.start();
             } else {
-                System.out.println("This is the end of swingy and you have won the game by a great story that will be told for generations ");
+                System.out.println(pdata +" isn't a valid input please try again.");
             }
             playscan.close();
-        } catch (Exception e) {
+        } catch (final Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static consoleview consoleview() {
+        return null;
     }
 
 }
